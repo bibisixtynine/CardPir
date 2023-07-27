@@ -11,6 +11,9 @@
 		7E62EEC12A7243E500AE1421 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E62EEC02A7243E500AE1421 /* ContentView.swift */; };
 		7E62EEC32A7243E600AE1421 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E62EEC22A7243E600AE1421 /* Assets.xcassets */; };
 		7E62EEC72A7243E600AE1421 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E62EEC62A7243E600AE1421 /* Preview Assets.xcassets */; };
+		7E62EECF2A72441300AE1421 /* MultiPeer in Frameworks */ = {isa = PBXBuildFile; productRef = 7E62EECE2A72441300AE1421 /* MultiPeer */; };
+		7E62EED52A724C0800AE1421 /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E62EED42A724C0800AE1421 /* Communicator.swift */; };
+		7E62EED72A724C5B00AE1421 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E62EED62A724C5B00AE1421 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		7E62EEC22A7243E600AE1421 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E62EEC42A7243E600AE1421 /* AutoPir.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoPir.entitlements; sourceTree = "<group>"; };
 		7E62EEC62A7243E600AE1421 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7E62EED32A724A6300AE1421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7E62EED42A724C0800AE1421 /* Communicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
+		7E62EED62A724C5B00AE1421 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E62EECF2A72441300AE1421 /* MultiPeer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +59,11 @@
 		7E62EEBD2A7243E500AE1421 /* AutoPir */ = {
 			isa = PBXGroup;
 			children = (
+				7E62EED32A724A6300AE1421 /* Info.plist */,
 				7E62EEBE2A7243E500AE1421 /* AutoPirApp.swift */,
 				7E62EEC02A7243E500AE1421 /* ContentView.swift */,
+				7E62EED42A724C0800AE1421 /* Communicator.swift */,
+				7E62EED62A724C5B00AE1421 /* Message.swift */,
 				7E62EEC22A7243E600AE1421 /* Assets.xcassets */,
 				7E62EEC42A7243E600AE1421 /* AutoPir.entitlements */,
 				7E62EEC52A7243E600AE1421 /* Preview Content */,
@@ -85,6 +95,9 @@
 			dependencies = (
 			);
 			name = AutoPir;
+			packageProductDependencies = (
+				7E62EECE2A72441300AE1421 /* MultiPeer */,
+			);
 			productName = AutoPir;
 			productReference = 7E62EEBB2A7243E500AE1421 /* AutoPir.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +126,9 @@
 				Base,
 			);
 			mainGroup = 7E62EEB22A7243E500AE1421;
+			packageReferences = (
+				7E62EECD2A72441300AE1421 /* XCRemoteSwiftPackageReference "MultiPeer" */,
+			);
 			productRefGroup = 7E62EEBC2A7243E500AE1421 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +155,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E62EED52A724C0800AE1421 /* Communicator.swift in Sources */,
+				7E62EED72A724C5B00AE1421 /* Message.swift in Sources */,
 				7E62EEC12A7243E500AE1421 /* ContentView.swift in Sources */,
 				7E62EEBF2A7243E500AE1421 /* AutoPirApp.swift in Sources */,
 			);
@@ -269,6 +287,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AutoPir/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -287,7 +306,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alsim.AutoPir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,6 +328,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AutoPir/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -325,7 +347,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alsim.AutoPir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -354,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7E62EECD2A72441300AE1421 /* XCRemoteSwiftPackageReference "MultiPeer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bibisixtynine/MultiPeer.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7E62EECE2A72441300AE1421 /* MultiPeer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E62EECD2A72441300AE1421 /* XCRemoteSwiftPackageReference "MultiPeer" */;
+			productName = MultiPeer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7E62EEB32A7243E500AE1421 /* Project object */;
 }
