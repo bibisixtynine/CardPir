@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "multipeer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bibisixtynine/MultiPeer.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "e2ea072710fb566b0070a6b5d78b45c29307c218"
+      }
+    }
+  ],
+  "version" : 2
+}
